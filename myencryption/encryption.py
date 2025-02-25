@@ -55,7 +55,7 @@ def createKeys(encoded_message):
         keys1.append(key1)
         keys2.append(key2)
 
-    return [keys1, keys2]
+    return (keys1, keys2)
 
 
 # def decryptMessageAdvanced1(encoder_str, key1, key2):
