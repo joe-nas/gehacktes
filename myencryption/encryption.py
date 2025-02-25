@@ -76,6 +76,9 @@ def decryptMessage(encoder_str, key1, key2):
     message = ""
     message_length = len(key1)
 
+    if len(key1) != len(key2):
+        raise Exception("The keys cannot have different length.")
+
     for i in range(0, message_length):
         message += encoder_str[key1[i] + key2[i]]
 
@@ -83,7 +86,6 @@ def decryptMessage(encoder_str, key1, key2):
 
 
 message_encoded = textEncoding("HALLO123_", encoder_str)
-print(message_encoded)
+# print(message_encoded)
 key1, key2 = createKeys(message_encoded)
-
 print(decryptMessage(encoder_str, key1, key2))
