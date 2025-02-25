@@ -49,15 +49,11 @@ def recursiveFromDecimalToBase(from_number, to_base, acummulator=[]):
     acummulator.insert(0, str(rest % to_base))
     rest = rest // to_base
 
-    print(f"to_number: {acummulator}, rest: {rest}")
+    # print(f"to_number: {acummulator}, rest: {rest}")
 
     return recursiveFromDecimalToBase(rest, to_base, acummulator)
 
 
 def combinedRecursiveConversion(from_number, from_base, to_base):
     intermediary_dec = recursiveFromBaseToDecimalConversion(from_number, from_base)
-
     return recursiveFromDecimalToBase(intermediary_dec, to_base)
-
-
-print(combinedRecursiveConversion("AFFE", 16, 10))
